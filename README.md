@@ -1,4 +1,4 @@
-﻿# UGREEN Syncthing Reporter
+# UGREEN Syncthing Reporter
 
 Der UGREEN Syncthing Reporter ist ein leichtgewichtiges Docker-Paket für Syncthing, das einen täglichen HTML-Bericht per E-Mail oder über Apprise versenden kann.
 
@@ -14,6 +14,20 @@ Das Paket unterstützt Deutsch und Englisch in einem Projekt und ist besonders f
 - Outlook-freundliches HTML-Layout
 - Docker-Setup mit separatem Reporter-Container
 
+## Screenshots
+
+### Desktop-Ansicht
+
+<p align="center">
+  <img src="Screens/DE_Mail.jpg" alt="Syncthing Bericht Desktop-Ansicht" width="1000">
+</p>
+
+### Mobile Ansicht
+
+<p align="center">
+  <img src="Screens/DE_MailMobil.jpg" alt="Syncthing Bericht Mobile Ansicht" width="420">
+</p>
+
 ## Projektstruktur
 
 ```text
@@ -22,6 +36,9 @@ UGREEN-Syncthing-Reporter/
 ├─ LICENSE
 ├─ .gitignore
 ├─ UGREEN_Syncthing_Reporter_Handbuch_DE-EN.pdf
+├─ Screens/
+│  ├─ DE_Mail.jpg
+│  └─ DE_MailMobil.jpg
 └─ syncthing/
    ├─ .env.example
    ├─ docker-compose.yaml
