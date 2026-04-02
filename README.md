@@ -1,16 +1,16 @@
-# UGREEN Syncthing Reporter
+﻿# UGREEN Syncthing Reporter
 
-UGREEN Syncthing Reporter ist ein leichtgewichtiges Docker-Paket für Syncthing, das einen täglichen HTML-Bericht per Mail oder Apprise versendet.
+Der UGREEN Syncthing Reporter ist ein leichtgewichtiges Docker-Paket für Syncthing, das einen täglichen HTML-Bericht per E-Mail oder über Apprise versenden kann.
 
-Der Reporter unterstützt Deutsch und Englisch in einem Paket und ist besonders für UGREEN NAS / UGOS geeignet, funktioniert grundsätzlich aber auch auf anderen Docker-Hosts.
+Das Paket unterstützt Deutsch und Englisch in einem Projekt und ist besonders für UGREEN NAS mit UGOS geeignet, funktioniert aber grundsätzlich auch auf anderen Docker-Hosts.
 
 ## Features
 
-- Täglicher Syncthing-Bericht per HTML-Mail oder Apprise
-- DE/EN Unterstützung über `REPORT_LANG=de|en`
-- Ordnerstatus, API-Fehler und fehlgeschlagene Elemente
-- Änderungen der letzten X Stunden (`WINDOW_HOURS`)
-- Größenauflösung und Cache für Dateigrößen
+- Täglicher HTML-Bericht für Syncthing
+- Versand per E-Mail oder Apprise
+- Deutsch und Englisch über `REPORT_LANG=de` oder `REPORT_LANG=en`
+- Übersicht zu Ordnerstatus, API-Fehlern und fehlgeschlagenen Elementen
+- Auswertung der Änderungen der letzten X Stunden über `WINDOW_HOURS`
 - Outlook-freundliches HTML-Layout
 - Docker-Setup mit separatem Reporter-Container
 
@@ -19,6 +19,7 @@ Der Reporter unterstützt Deutsch und Englisch in einem Paket und ist besonders 
 ```text
 UGREEN-Syncthing-Reporter/
 ├─ README.md
+├─ LICENSE
 ├─ .gitignore
 ├─ UGREEN_Syncthing_Reporter_Handbuch_DE-EN.pdf
 └─ syncthing/
@@ -37,11 +38,11 @@ UGREEN-Syncthing-Reporter/
 
 ## Quickstart
 
-1. Paket auf dein NAS oder deinen Docker-Host kopieren.
-2. `syncthing/.env.example` nach `syncthing/.env` kopieren.
-3. Werte in `.env` anpassen.
-4. Optional eigene Syncthing-Datenpfade in `docker-compose.yaml` ergänzen.
-5. Stack starten:
+1. Kopiere das Paket auf dein NAS oder deinen Docker-Host.
+2. Kopiere `syncthing/.env.example` nach `syncthing/.env`.
+3. Passe die Werte in `.env` an deine Umgebung an.
+4. Ergänze bei Bedarf eigene Syncthing-Datenpfade in `docker-compose.yaml`.
+5. Starte den Stack:
 
 ```bash
 cd syncthing
@@ -50,19 +51,25 @@ docker compose up -d --build
 
 ## Wichtige Hinweise
 
-- Die Beispielkonfiguration liegt absichtlich als `.env.example` im Repository. Bitte keine echte `.env` mit Zugangsdaten committen.
-- Laufzeitdaten unter `syncthing/syncthing_reporter_py/state/` sind nicht für Git gedacht und werden über `.gitignore` ausgeschlossen.
-- Die Compose-Datei nutzt aktuell `syncthing/syncthing:latest`. Für reproduzierbare Deployments kann später ein fester Tag sinnvoll sein.
+- Kopiere vor dem Start `syncthing/.env.example` nach `syncthing/.env` und passe die Konfiguration an
+- Bitte veröffentliche keine echten Zugangsdaten oder produktiven `.env` Dateien
+- Während des Betriebs erzeugt der Reporter lokale Status- und Arbeitsdateien. Diese sind nur für den laufenden Betrieb gedacht und gehören nicht ins Repository
+- Die Compose-Datei verwendet aktuell `syncthing/syncthing:latest`. Wer lieber mit festen Versionen arbeitet, kann das Image später auf einen bestimmten Tag umstellen
 
 ## Dokumentation
 
-- Handbuch (PDF): `UGREEN_Syncthing_Reporter_Handbuch_DE-EN.pdf`
+- Das ausführliche Handbuch liegt als PDF im Repository: `UGREEN_Syncthing_Reporter_Handbuch_DE-EN.pdf`
 
 ## Version
 
-- Reporter: V2
+- Reporter-Version: V2
 - Build-Stand im Paket: 2026-03-17.1
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Details findest du in der Datei `LICENSE`.
 
 ## English note
 
-This repository contains a bilingual DE/EN Syncthing reporting package for Docker. The main documentation is included as PDF and the runtime language can be switched with `REPORT_LANG=de` or `REPORT_LANG=en`.
+This repository contains a bilingual German and English Syncthing reporting package for Docker.  
+The main manual is included as a PDF in the repository, and the runtime language can be switched with `REPORT_LANG=de` or `REPORT_LANG=en`.
