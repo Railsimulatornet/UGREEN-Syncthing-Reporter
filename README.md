@@ -49,6 +49,16 @@ cd syncthing
 docker compose up -d --build
 ```
 
+## Lizenz und Nutzung
+
+Dieses Projekt steht unter der **PolyForm Noncommercial License 1.0.0**.
+
+- Nichtkommerzielle Nutzung ist erlaubt
+- Kommerzielle Nutzung ist nicht erlaubt
+- Für kommerzielle Nutzung ist vorab eine schriftliche Genehmigung des Autors erforderlich
+
+Bei Interesse an einer kommerziellen Nutzung kontaktiere mich bitte vorab.
+
 ## Wichtige Hinweise
 
 - Kopiere vor dem Start `syncthing/.env.example` nach `syncthing/.env` und passe die Konfiguration an
@@ -65,11 +75,13 @@ docker compose up -d --build
 - Reporter-Version: V2
 - Build-Stand im Paket: 2026-03-17.1
 
-## Lizenz
-
-Dieses Projekt steht unter der MIT-Lizenz. Details findest du in der Datei `LICENSE`.
-
 ## English note
 
-This repository contains a bilingual German and English Syncthing reporting package for Docker.  
+This project is licensed under the **PolyForm Noncommercial License 1.0.0**.
+
+- Noncommercial use is allowed
+- Commercial use is not allowed
+- Commercial use requires prior written permission from the author
+
+This repository contains a bilingual German and English Syncthing reporting package for Docker.
 The main manual is included as a PDF in the repository, and the runtime language can be switched with `REPORT_LANG=de` or `REPORT_LANG=en`.
