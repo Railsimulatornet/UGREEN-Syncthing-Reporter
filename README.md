@@ -1,5 +1,6 @@
 # UGREEN Syncthing Reporter
 ![SyncthingReporter](Screens/SyncthingReporter.png)
+
 Der UGREEN Syncthing Reporter ist ein leichtgewichtiges Docker-Paket für Syncthing, das einen täglichen HTML-Bericht per E-Mail oder über Apprise versenden kann.
 
 Das Paket unterstützt Deutsch und Englisch in einem Projekt und ist besonders für UGREEN NAS mit UGOS geeignet, funktioniert aber grundsätzlich auch auf anderen Docker-Hosts.
